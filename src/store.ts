@@ -39,7 +39,6 @@ export const useStore = create<LinkState>((set, get) => ({
     { id: 'linkedin', name: 'LinkedIn', url: 'https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGCaiooHOlVtAAAAZZV3-ogszoqvpT1zybgtGgKmZ3OfdahBQjmVG9eiuqd-uW2SPGZWElOcDmTlPf-PQypFCQlr95ymJ2BL-Kmlnti5ScmRe7aAb23RrAh_4H8NE-r4_7wSnM=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fplanhom%2Fabout%2F%3FviewAsMember%3Dtrue', icon: 'Linkedin' },
     { id: 'twitter', name: 'X', url: 'https://x.com/PLANHOM', icon: 'Twitter' },
     { id: 'youtube', name: 'Youtube', url: 'https://www.youtube.com/@planhom', icon: 'Youtube' },
-    { id: 'threads', name: 'threads', url: 'https://www.threads.net/@planhomkorea', icon: 'threads' },
   ],
   searchTerm: '',
   selectedTagId: null,
