@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { KeyRound, AlertCircle, Loader2 } from 'lucide-react';
 
-const ADMIN_EMAIL = 'planhomkorea@gmail.com';
-
 export const PasswordGate: React.FC = () => {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +15,7 @@ export const PasswordGate: React.FC = () => {
     setError('');
 
     try {
-      const isValid = await authenticate(ADMIN_EMAIL, password);
+      const isValid = await authenticate(email, password);
       if (!isValid) {
         setError('Invalid credentials');
         setPassword('');
@@ -38,7 +37,7 @@ export const PasswordGate: React.FC = () => {
         </div>
         
         <h1 className="text-2xl font-bold text-center mb-2">Admin Access</h1>
-        <p className="text-center text-gray-600 mb-6">Please enter your admin password to continue</p>
+        <p className="text-center text-gray-600 mb-6">Please enter your admin credentials to continue</p>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -48,9 +47,14 @@ export const PasswordGate: React.FC = () => {
             <input
               type="email"
               id="email"
-              value={ADMIN_EMAIL}
-              disabled
-              className="w-full px-3 py-2 border rounded-lg bg-gray-50"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setError('');
+              }}
+              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Enter your email"
+              required
             />
           </div>
 
@@ -67,7 +71,8 @@ export const PasswordGate: React.FC = () => {
                 setError('');
               }}
               className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Enter admin password"
+              placeholder="Enter password"
+              required
             />
           </div>
 
