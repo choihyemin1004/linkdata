@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { KeyRound, AlertCircle, Loader2 } from 'lucide-react';
 
-const ADMIN_EMAIL = 'planhomekorea@gmail.com';
+const ADMIN_EMAIL = 'planhomkorea@gmail.com';
 
 export const PasswordGate: React.FC = () => {
   const [password, setPassword] = useState('');
