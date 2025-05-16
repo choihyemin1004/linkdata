@@ -72,7 +72,7 @@ function App() {
     >
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-2xl font-bold">Link Dashboard</h1>
+          <h1 className="text-2xl font-bold">플랜홈 링크 Dashboard</h1>
           <div className="flex gap-2">
             <button
               onClick={toggleActivityLog}
